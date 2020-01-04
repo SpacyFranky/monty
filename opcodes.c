@@ -66,3 +66,20 @@ void stack_free(stack_t *head)
 		free(tempo);
 	}
 }
+/**
+ *
+ *
+ *
+ */
+void opcode_pint(stack_t **stack, unsigned int line_number)
+{
+	if (stack == NULL || *stack == NULL)
+	{
+		printf("L%d: can't pint, stack empty\n", line_number)
+			exit(EXIT_FAILURE);
+	}
+	else
+	{
+		printf("%d\n", (*stack)->n);
+	}
+}
