@@ -19,6 +19,12 @@ If you cant malloc anymore, print the error message Error: malloc failed, follow
 You have to use malloc and free and are not allowed to use any other function from man malloc (realloc, calloc, )
 </p>
 
+<h1>Compile and Run:</h1>
+<p>
+For "main_1,3.c" type: <b>gcc -Wall -Werror -Wextra -pedantic main_1,3.c getopcode.c opcodes.c verification.c -o monty</b>
+For "main_2,0.c" type: (this will be updated as soon as I finish working on it)<br>
+"main_2.0.c" will be featuring the push and pall functions.
+</p>
 
 <h1>How to test the output</h1>
 <p>
