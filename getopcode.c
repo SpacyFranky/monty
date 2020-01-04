@@ -17,9 +17,10 @@ typedef struct nameof_op {
 int get_opcode(char string[])
 {
 	name_op a[] = {
-		{"\n"},
 		{"push"},
 		{"pall"},
+		{"\n"},
+		{"\0"},
 		{"NULL"}
 	};
 	int i;

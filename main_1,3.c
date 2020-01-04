@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 		}
                 line_size = getline(&buffer, &bufsize, f);
         }
-	printf("Code works fine!\n");
+	fprintf(stdout, "Code works fine!\n");
 	fclose(f);
 	return (0);
 }
