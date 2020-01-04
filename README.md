@@ -23,7 +23,7 @@ You have to use malloc and free and are not allowed to use any other function fr
 <h1>How to test the output<h1>
 <p>
 after gcc type : <b>./monty</b>, the output should be <b>USAGE: monty file</b><br>
-                 <b> ./monty <file> <b>, file should doesn't exist in your current directory. The output should be <b>Error: Can't open file file</b><br>
-                 <b> ./monty test3 <b>, it will not work because "hello" is an unknown instruction. Output: <b>L1: unkown instruction hello<b> followed by a new line. This is a little bug that will be fixed. There should be no new line at the end.<br>
-                <b> ./monty test4 <b>, this will work fine because it's now fixed to read the '\n' and '\0' as instructions and will not cause a problem.<br>
+                 <b> ./monty <file> </b>, file should doesn't exist in your current directory. The output should be <b>Error: Can't open file file</b><br>
+                 <b> ./monty test3 </b>, it will not work because "hello" is an unknown instruction. Output: <b>L1: unkown instruction hello</b> followed by a new line. This is a little bug that will be fixed. There should be no new line at the end.<br>
+                <b> ./monty test4 </b>, this will work fine because it's now fixed to read the '\n' and '\0' as instructions and will not cause a problem.<br>
 </p>
