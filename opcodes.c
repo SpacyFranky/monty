@@ -75,11 +75,30 @@ void opcode_pint(stack_t **stack, unsigned int line_number)
 {
 	if (stack == NULL || *stack == NULL)
 	{
-		printf("L%d: can't pint, stack empty\n", line_number)
+		printf("L%d: can't pint, stack empty\n", line_number);
 			exit(EXIT_FAILURE);
 	}
 	else
 	{
 		printf("%d\n", (*stack)->n);
 	}
+}
+/**
+ *
+ *
+ */
+void opcode_pop(stack_t **stack, unsigned int line_number)
+{
+	stack_t *tempo;
+
+	if (stack == NULL || *stack == NULL)
+	{
+		printfprintf("L%d: can't pop an empty stack\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	tempo = *stack;
+	stack = tempo->next;
+	if (*stack != NULL)
+		(*stack)->prev = NULL;
+	free(tempo);
 }
