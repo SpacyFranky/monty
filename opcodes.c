@@ -31,7 +31,7 @@ stack_t *add_dnodeint(stack_t **head, int n)
 /**
  * opcode_push - function push node to the beginning
  * @stack :is stack_t type, pointer to node
- * @lin_number :is int type
+ * @line_number :is int type
  * @token2 : is char type pointer
  */
 
@@ -73,20 +73,20 @@ void opcode_pall(stack_t **stack, __attribute__((unused))char *token2
 }
 
 /*
-  void stack_free(stack_t *head)
-  {
-  stack_t *tempo;
-  if (head == NULL)
-  {
-  return;
-  }
-  while (head->next != NULL)
-  {
-  tempo = head;
-  head = head->next;
-  free(tempo);
-  }
-  }
+* void stack_free(stack_t *head)
+*  {
+* stack_t *tempo;
+* if (head == NULL)
+* {
+*  return;
+*  }
+*  while (head->next != NULL)
+*  {
+*  tempo = head;
+*  head = head->next;
+*  free(tempo);
+*  }
+*  }
 */
 /**
  * opcode_pint - function print the top of the stack
@@ -108,19 +108,20 @@ void opcode_pint(stack_t **stack, __attribute__((unused))char *token2
 	}
 }
 
-/*void opcode_pop(stack_t **stack, unsigned int line_number)
-{
-	stack_t *tempo;
-
-	if (stack == NULL || *stack == NULL)
-	{
-		printfprintf("L%d: can't pop an empty stack\n", line_number);
-		exit(EXIT_FAILURE);
-	}
-	tempo = *stack;
-	stack = tempo->next;
-	if (*stack != NULL)
-		(*stack)->prev = NULL;
-	free(tempo);
-}
+/*
+ * void opcode_pop(stack_t **stack, unsigned int line_number)
+ * {
+ *	stack_t *tempo;
+ *
+ *	if (stack == NULL || *stack == NULL)
+ *	{
+ *		printfprintf("L%d: can't pop an empty stack\n", line_number);
+ *		exit(EXIT_FAILURE);
+ *	}
+ *	tempo = *stack;
+ *	stack = tempo->next;
+ *	if (*stack != NULL)
+ *		(*stack)->prev = NULL;
+ *	free(tempo);
+ *}
 */

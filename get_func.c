@@ -2,10 +2,8 @@
 #include <string.h>
 /**
  * *get_func - this will search for which of the right function to operate
- * opcode command.
- * @stack: the stack that has the nodes.
- * @line_number: line number inside the file
- * Return: the needed function.
+ * @line_number: line number.
+ * Return: returns function.
  */
 void (*get_func(char *word))(stack_t **stack, char *token2,
 			     unsigned int line_number)
