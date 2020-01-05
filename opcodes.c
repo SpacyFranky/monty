@@ -3,10 +3,10 @@
 #include <string.h>
 
 /**
- * *add_dnodeint - adds a new node at the beginning of a dlistint_t list.
- * @head: doubly linked list.
- * @n: value.
- * Return: the address of the new element, or NULL if it failed.
+ * *add_dnodeint - adds a new node at the beginning of a stack_t.
+ * @head: doubly linked list pointer.
+ * @n: is int type
+ * Return: the address of new node
  */
 stack_t *add_dnodeint(stack_t **head, int n)
 {
@@ -32,6 +32,7 @@ stack_t *add_dnodeint(stack_t **head, int n)
  * opcode_push - function push node to the beginning
  * @stack :is stack_t type, pointer to node
  * @lin_number :is int type
+ * @token2 : is char type pointer
  */
 
 void opcode_push(stack_t **stack, char *token2, unsigned int line_number)
@@ -55,43 +56,46 @@ void opcode_push(stack_t **stack, char *token2, unsigned int line_number)
  * opcode_pall - function print all elements in the stack
  * @stack: is stack_t type ,double pointer
  * @token2:is char type pointer
- * @line_number:is int type 
+ * @line_number:is int type
  */
 
-void opcode_pall(stack_t **stack, __attribute__((unused))char *token2, __attribute__((unused))unsigned int line_number)
+void opcode_pall(stack_t **stack, __attribute__((unused))char *token2
+, __attribute__((unused))unsigned int line_number)
 {
 	stack_t *temp = *stack;
 
-	while(temp != NULL)
+	temp = *stack;
+	while (temp != NULL)
 	{
 		printf("%d\n", temp->n);
 		temp = temp->next;
 	}
 }
 
-/*void stack_free(stack_t *head)
-{
-	stack_t *tempo;
-
-       	if (head == NULL)
-	{
-		return;
-	}
-	while (head->next != NULL)
-	{
-		tempo = head;
-		head = head->next;
-		free(tempo);
-	}
-}
+/*
+  void stack_free(stack_t *head)
+  {
+  stack_t *tempo;
+  if (head == NULL)
+  {
+  return;
+  }
+  while (head->next != NULL)
+  {
+  tempo = head;
+  head = head->next;
+  free(tempo);
+  }
+  }
 */
 /**
- *
- *
- *
- *
+ * opcode_pint - function print the top of the stack
+ * @stack : is stack_t type double pointer
+ * @token2 : is char type pointer
+ * @line_number : is int type
  */
-void opcode_pint(stack_t **stack, __attribute__((unused))char *token2, unsigned int line_number)
+void opcode_pint(stack_t **stack, __attribute__((unused))char *token2
+, unsigned int line_number)
 {
 	if (stack == NULL || *stack == NULL)
 	{
