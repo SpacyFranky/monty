@@ -58,33 +58,34 @@ void opcode_push(stack_t **stack, char *token2, unsigned int line_number)
  * @line_number:is int type
  */
 
-void opcode_pall(stack_t **stack, __attribute__((unused))char *token2, __attribute__((unused))unsigned int line_number)
+void opcode_pall(stack_t **stack, __attribute__((unused))char *token2
+, __attribute__((unused))unsigned int line_number)
 {
 	stack_t *temp;
 
 	temp = *stack;
-	while(temp != NULL)
+	while (temp != NULL)
 	{
 		printf("%d\n", temp->n);
 		temp = temp->next;
 	}
 }
 
-/*void stack_free(stack_t *head)
-{
-	stack_t *tempo;
-
-       	if (head == NULL)
-	{
-		return;
-	}
-	while (head->next != NULL)
-	{
-		tempo = head;
-		head = head->next;
-	 	free(tempo);
-	}
-}
+/*
+  void stack_free(stack_t *head)
+ {
+ stack_t *tempo;
+ if (head == NULL)
+ {
+ return;
+ }
+ while (head->next != NULL)
+ {
+ tempo = head;
+ head = head->next;
+ free(tempo);
+ }
+ }
 */
 /**
  * opcode_pint - function print the top of  the stack
@@ -92,7 +93,8 @@ void opcode_pall(stack_t **stack, __attribute__((unused))char *token2, __attribu
  * @token : is char type pointer
  * @line_number : is int type
  */
-void opcode_pint(stack_t **stack, __attribute__((unused))char *token2, unsigned int line_number)
+void opcode_pint(stack_t **stack, __attribute__((unused))char *token2
+, unsigned int line_number)
 {
 	if (stack == NULL || *stack == NULL)
 	{
