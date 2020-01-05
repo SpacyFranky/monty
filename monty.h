@@ -29,17 +29,20 @@ typedef struct stack_s
 typedef struct instruction_s
 {
         char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+        void (*f)(stack_t **stack, char *token2, unsigned int line_number);
 } instruction_t;
 
-extern stack_t *head;
 
 /* needed functions in main */
 void verif(int argc);
 void exist(FILE *f, char *agrv[]);
-void is_token_opcode(char *token, unsigned int lines);
 
-/* in verification.c */
-int get_opcode(char string[]);
+void inline_f(FILE *F);
+void (*get_func(char *word))(stack_t **, char *, unsigned int);
 
+
+/* opcode functions */
+void opcode_push(stack_t **stack, char *token2, unsigned int line_number);
+void opcode_pall(stack_t **stack, __attribute__((unused))char *token2, __attribute__((unused))unsigned int line_number);
+void opcode_pint(stack_t **stack, __attribute__((unused))char *token2, unsigned int line_number);
 #endif /* _MONTY_ */
