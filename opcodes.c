@@ -32,6 +32,7 @@ stack_t *add_dnodeint(stack_t **head, int n)
  * opcode_push - function push node to the beginning
  * @stack :is stack_t type, pointer to node
  * @lin_number :is int type
+ * @token2 : is char type pointer
  */
 
 void opcode_push(stack_t **stack, char *token2, unsigned int line_number)
