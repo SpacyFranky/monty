@@ -5,7 +5,7 @@
 /**
  * *add_dnodeint - adds a new node at the beginning of a dlistint_t list.
  * @head: doubly linked list.
- * @n: value.
+ * @n: is int type
  * Return: the address of the new element, or NULL if it failed.
  */
 stack_t *add_dnodeint(stack_t **head, int n)
@@ -73,19 +73,19 @@ void opcode_pall(stack_t **stack, __attribute__((unused))char *token2
 
 /*
   void stack_free(stack_t *head)
- {
- stack_t *tempo;
- if (head == NULL)
- {
- return;
- }
- while (head->next != NULL)
- {
- tempo = head;
- head = head->next;
- free(tempo);
- }
- }
+  {
+  stack_t *tempo;
+  if (head == NULL)
+  {
+  return;
+  }
+  while (head->next != NULL)
+  {
+  tempo = head;
+  head = head->next;
+  free(tempo);
+  }
+  }
 */
 /**
  * opcode_pint - function print the top of  the stack
