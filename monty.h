@@ -43,6 +43,18 @@ void (*get_func(char *word))(stack_t **, char *, unsigned int);
 
 /* opcode functions */
 void opcode_push(stack_t **stack, char *token2, unsigned int line_number);
-void opcode_pall(stack_t **stack, __attribute__((unused))char *token2, __attribute__((unused))unsigned int line_number);
-void opcode_pint(stack_t **stack, __attribute__((unused))char *token2, unsigned int line_number);
+void opcode_pall(stack_t **stack, __attribute__((unused))char *token2,
+		 __attribute__((unused))unsigned int line_number);
+void opcode_pint(stack_t **stack, __attribute__((unused))char *token2,
+		 unsigned int line_number);
+void opcode_swap(stack_t **stack, __attribute__((unused))char *token2,
+                 unsigned int line_number);
+void opcode_add(stack_t **stack, __attribute__((unused))char *token2,
+		, unsigned int line_number);
+void opcode_nop(stack_t **stack, __attribute__((unused))char *token2,
+		unsigned int line_number);
+void opcode_pop(stack_t **stack, __attribute__((unused))char *token2,
+		unsigned int line_number);
+void stack_free(stack_t **stack, __attribute__((unused))char *token2
+                , __attribute__((unused))unsigned int line_number));
 #endif /* _MONTY_ */

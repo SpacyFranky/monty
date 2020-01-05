@@ -13,6 +13,11 @@ void (*get_func(char *word))(stack_t **stack, char *token2,
 		{"push", opcode_push},
 		{"pall", opcode_pall},
 		{"pint", opcode_pint},
+		{"nop", opcode_nop},
+		{"swap", opcode_swap},
+		{"free", opcode_free},
+		{"pop", opcode_pop},
+		{"add", opcode_add},
 		{NULL, NULL}
 	};
 

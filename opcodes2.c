@@ -1,11 +1,14 @@
 #include "monty.h"
-
+#include <stdio.h>
+#include <stdlib.h>
 /**
- *
- *
- *
+ * opcode_swap - swap nodes
+ * @stack: doubley pointed stack
+ * @token2: pointer to char.
+ * @line_number: line number.
  */
-void opcode_swap(stack_t **stack_t, unsigned int line_number)
+void opcode_swap(stack_t **stack, __attribute__((unused))char *token2,
+		 unsigned int line_number)
 {
 	stack_t *tempo;
 
@@ -22,16 +25,19 @@ void opcode_swap(stack_t **stack_t, unsigned int line_number)
 	*stack = tempo;
 }
 /**
- *
- *
+ * opcode_add - add elements of the stack
+ * @stack: double pointer
+ * @line_number: is int type
+ * @token2 : is char type
  */
-void upcode_add(stack_t **stack, unsigned int line_number)
+void opcode_add(stack_t **stack, __attribute__((unused))char *token2
+		, unsigned int line_number)
 {
 	int total_add;
-        stack_t *tempo;
+	stack_t *tempo;
 
 	(stack == NULL || *stack == NULL ||  (*stack)->next  == NULL)
-        {
+	{
 		printf("L%d: can't add, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
@@ -43,11 +49,15 @@ void upcode_add(stack_t **stack, unsigned int line_number)
 	(*stack)->prev = NULL;
 }
 /**
- *
- *
+ * opcode_nop - dosen't do anything
+ * @stack: doubly pointed
+ * @token2: is char type
+ * @line_number: int type
  */
-void opcode_nop(stack_t **stack, unsigned int line_number)
+void opcode_nop(stack_t **stack, __attribute__((unused))char *token2,
+		unsigned int line_number)
 {
 	(void)stack;
 	(void)line_number;
+	(void)token2;
 }
