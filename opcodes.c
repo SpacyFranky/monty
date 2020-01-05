@@ -5,7 +5,7 @@
  * @n :is int type
  * return : address of new node
  */
-stack_t upcode_push(stack_t **stack, __attribute__((unused))unsigned int line_number)
+void  upcode_push(stack_t **stack, __attribute__((unused))unsigned int line_number)
 {
 
 	stack_t *new;
@@ -26,7 +26,7 @@ stack_t upcode_push(stack_t **stack, __attribute__((unused))unsigned int line_nu
 	if (*stack != NULL)
 		(*stack)->prev = new;
 	*stack = new;
-	return (new);
+	
 }
 /**
  *
