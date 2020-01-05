@@ -22,10 +22,12 @@ void opcode_swap(stack_t **stack_t, unsigned int line_number)
 	*stack = tempo;
 }
 /**
- *
- *
+ * upcode_add - add elements of the stack
+ * @stack: double pointer
+ * @line_number: is int type
+ * @token2 : is char type
  */
-void upcode_add(stack_t **stack, unsigned int line_number)
+void upcode_add(stack_t **stack, char *token , unsigned int line_number)
 {
 	int total_add;
         stack_t *tempo;
