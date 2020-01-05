@@ -1,11 +1,11 @@
 #include "monty.h"
 
 /**
- * upcode_push - function
- * @n :is int type
- * return : address of new node
+ * opcode_push - function push node to the beginning
+ * @stack :is stack_t type, pointer to node
+ * @lin_number :is int type
  */
-void  upcode_push(stack_t **stack, __attribute__((unused))unsigned int line_number)
+void opcode_push(stack_t **stack, __attribute__((unused))unsigned int line_number)
 {
 
 	stack_t *new;
@@ -26,7 +26,7 @@ void  upcode_push(stack_t **stack, __attribute__((unused))unsigned int line_numb
 	if (*stack != NULL)
 		(*stack)->prev = new;
 	*stack = new;
-	
+
 }
 /**
  *
@@ -34,7 +34,7 @@ void  upcode_push(stack_t **stack, __attribute__((unused))unsigned int line_numb
  *
  */
 
-void  upcode_pall(stack_t **stack, __attribute__((unused))unsigned int line_number)
+void  opcode_pall(stack_t **stack, __attribute__((unused))unsigned int line_number)
 {
 	stack_t *tempo;
 
