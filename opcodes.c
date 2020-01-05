@@ -60,9 +60,8 @@ void opcode_push(stack_t **stack, char *token2, unsigned int line_number)
 
 void opcode_pall(stack_t **stack, __attribute__((unused))char *token2, __attribute__((unused))unsigned int line_number)
 {
-	stack_t *temp;
+	stack_t *temp = *stack;
 
-	temp = *stack;
 	while(temp != NULL)
 	{
 		printf("%d\n", temp->n);
