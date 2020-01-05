@@ -54,7 +54,7 @@ void opcode_push(stack_t **stack, char *token2, unsigned int line_number)
 }
 /**
  * opcode_pall - function print all elements in the stack
- * @stack: is stack_t type ,double pointer to node
+ * @stack: is stack_t type ,double pointer 
  * @token2:is char type pointer
  * @line_number:is int type
  */
