@@ -1,13 +1,13 @@
 #include "monty.h"
-
+#include <stdio.h>
 /**
  * upcode_push - function
  * @n :is int type
  * return : address of new node
  */
-stack_t upcode_push(stack_t **stack, __attribute__((unused))unsigned int line_number)
+stack_t opcode_push(stack_t **stack, __attribute__((unused))unsigned int line_number)
 {
-
+	int a = 5;
 	stack_t *new;
 
 	if (head == NULL)
@@ -22,7 +22,7 @@ stack_t upcode_push(stack_t **stack, __attribute__((unused))unsigned int line_nu
 	}
 	new->next = *head;
 	new->prev = NULL;
-	new->n = n;
+	new->n = a;
 	if (*head != NULL)
 		(*head)->prev = new;
 	*head = new;
@@ -34,7 +34,7 @@ stack_t upcode_push(stack_t **stack, __attribute__((unused))unsigned int line_nu
  *
  */
 
-void  upcode_pall(stack_t **stack, __attribute__((unused))unsigned int line_number)
+void  opcode_pall(stack_t **stack, __attribute__((unused))unsigned int line_number)
 {
 	stack_t *tempo;
 
@@ -46,12 +46,7 @@ void  upcode_pall(stack_t **stack, __attribute__((unused))unsigned int line_numb
 
 	}
 }
-/**
- *
- *
- *
- */
-void stack_free(stack_t *head)
+/*void stack_free(stack_t *head)
 {
 	stack_t *tempo;
 
@@ -66,12 +61,8 @@ void stack_free(stack_t *head)
 		free(tempo);
 	}
 }
-/**
- *
- *
- *
- */
-void opcode_pint(stack_t **stack, unsigned int line_number)
+*/
+/*void opcode_pint(stack_t **stack, unsigned int line_number)
 {
 	if (stack == NULL || *stack == NULL)
 	{
@@ -83,11 +74,8 @@ void opcode_pint(stack_t **stack, unsigned int line_number)
 		printf("%d\n", (*stack)->n);
 	}
 }
-/**
- *
- *
- */
-void opcode_pop(stack_t **stack, unsigned int line_number)
+*/
+/*void opcode_pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tempo;
 
@@ -102,3 +90,4 @@ void opcode_pop(stack_t **stack, unsigned int line_number)
 		(*stack)->prev = NULL;
 	free(tempo);
 }
+*/
