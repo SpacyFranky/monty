@@ -6,7 +6,7 @@
  * *add_dnodeint - adds a new node at the beginning of a stack_t.
  * @head: doubly linked list.
  * @n: is int type
- * Return: the address of the new element, or NULL if it failed.
+ * Return: the address of new node
  */
 stack_t *add_dnodeint(stack_t **head, int n)
 {
