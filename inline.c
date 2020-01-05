@@ -19,8 +19,9 @@ void inline_f(FILE *f)
 	{
 		lines++;
 		token1 = strtok(buffer, " ");
+		if (strcmp(token1, "nop") == 0)
+			continue;
 		token2 = strtok(0, " ");
-
 		(*get_func(token1))(&stack, token2, lines);
 
 		line_size = getline(&buffer, &bufsize, f);
