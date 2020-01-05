@@ -54,7 +54,7 @@ void opcode_push(stack_t **stack, char *token2, unsigned int line_number)
 }
 /**
  * opcode_pall - function print all elements in the stack
- * @stack: is stack_t type ,double pointer
+ * @stack: is stack_t type ,double pointer to node
  * @token2:is char type pointer
  * @line_number:is int type
  */
@@ -89,7 +89,7 @@ void opcode_pall(stack_t **stack, __attribute__((unused))char *token2
   }
 */
 /**
- * opcode_pint - function print the top of  the stack
+ * opcode_pint - function print the top of the stack
  * @stack : is stack_t type double pointer
  * @token2 : is char type pointer
  * @line_number : is int type
