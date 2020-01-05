@@ -4,7 +4,7 @@
 
 /**
  * *add_dnodeint - adds a new node at the beginning of a stack_t.
- * @head: doubly linked list.
+ * @head: doubly linked list pointer.
  * @n: is int type
  * Return: the address of new node
  */
