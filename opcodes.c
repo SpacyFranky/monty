@@ -1,51 +1,75 @@
 #include "monty.h"
 #include <stdio.h>
-/**
- * upcode_push - function
- * @n :is int type
- * return : address of new node
- */
-stack_t opcode_push(stack_t **stack, __attribute__((unused))unsigned int line_number)
-{
-	int a = 5;
-	stack_t *new;
+#include <string.h>
 
-	if (head == NULL)
-	{
+/**
+ * *add_dnodeint - adds a new node at the beginning of a dlistint_t list.
+ * @head: doubly linked list.
+ * @n: value.
+ * Return: the address of the new element, or NULL if it failed.
+ */
+stack_t *add_dnodeint(stack_t **head, int n)
+{
+	stack_t *newnode;
+
+	newnode = malloc(sizeof(stack_t));
+
+	if (newnode == NULL)
 		return (NULL);
-	}
-	new = malloc(sizeof(stack_t));
-	if (new == NULL)
+	newnode->n = n;
+	newnode->next = *head;
+	newnode->prev = NULL;
+	if (*head != NULL)
+		(*head)->prev = newnode;
+	*head = newnode;
+	return (*head);
+}
+
+
+
+
+/**
+ * opcode_push - function push node to the beginning
+ * @stack :is stack_t type, pointer to node
+ * @lin_number :is int type
+ */
+
+void opcode_push(stack_t **stack, char *token2, unsigned int line_number)
+{
+	int x;
+
+	if (stack == NULL)
 	{
-		printf("Error: malloc failed");
+		stack = malloc(sizeof(stack_t));
+		printf("push stack is NULL\n");
+	}
+		if (token2 == NULL)
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	new->next = *head;
-	new->prev = NULL;
-	new->n = a;
-	if (*head != NULL)
-		(*head)->prev = new;
-	*head = new;
-	return (new);
+	x = atoi(token2);
+	add_dnodeint(stack, x);
 }
 /**
- *
- *
- *
+ * opcode_pall -
+ * @stack:
+ * @token2:
+ * @line_number:
  */
 
-void  opcode_pall(stack_t **stack, __attribute__((unused))unsigned int line_number)
+void opcode_pall(stack_t **stack, __attribute__((unused))char *token2, __attribute__((unused))unsigned int line_number)
 {
-	stack_t *tempo;
+	stack_t *temp;
 
-	tempo = *stack;
-	while(tempo->next != NULL)
+	temp = *stack;
+	while(temp != NULL)
 	{
-		printf("%d\n",tempo->n);
-		tempo = tempo->next;
-
+		printf("%d\n", temp->n);
+		temp = temp->next;
 	}
 }
+
 /*void stack_free(stack_t *head)
 {
 	stack_t *tempo;
@@ -62,7 +86,13 @@ void  opcode_pall(stack_t **stack, __attribute__((unused))unsigned int line_numb
 	}
 }
 */
-/*void opcode_pint(stack_t **stack, unsigned int line_number)
+/**
+ *
+ *
+ *
+ *
+ */
+void opcode_pint(stack_t **stack, __attribute__((unused))char *token2, unsigned int line_number)
 {
 	if (stack == NULL || *stack == NULL)
 	{
@@ -74,7 +104,7 @@ void  opcode_pall(stack_t **stack, __attribute__((unused))unsigned int line_numb
 		printf("%d\n", (*stack)->n);
 	}
 }
-*/
+
 /*void opcode_pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tempo;
