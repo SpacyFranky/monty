@@ -7,10 +7,10 @@
 void verif(int argc)
 {
 	if (argc != 2)
-        {
-                fprintf(stderr, "USAGE: monty file\n");
-                exit(EXIT_FAILURE);
-        }
+	{
+		fprintf(stderr, "USAGE: monty file\n");
+		exit(EXIT_FAILURE);
+	}
 }
 
 /**
@@ -18,12 +18,13 @@ void verif(int argc)
  * or not. If it doesn't exist, it prints an error message
  * to stderr.
  * @f: the Monty byte code file.
+ * @argv: argument vecteur.
  */
 void exist(FILE *f, char *argv[])
 {
 	if (f == NULL)
-        {
-                fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-                exit(EXIT_FAILURE);
-        }
+	{
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
+		exit(EXIT_FAILURE);
+	}
 }

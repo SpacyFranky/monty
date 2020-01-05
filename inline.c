@@ -1,15 +1,15 @@
 #include "monty.h"
 #include <string.h>
 /**
- * inline - gets inline of file
+ * inline_f - gets inline of file
  * @f: opcode byte file.
  */
 void inline_f(FILE *f)
 {
 	unsigned int lines = 0;
-        char *token1, *buffer = NULL;
-        size_t bufsize = 0;
-        ssize_t line_size;
+	char *token1, *buffer = NULL;
+	size_t bufsize = 0;
+	ssize_t line_size;
 	char *token2;
 	stack_t *stack;
 
