@@ -10,22 +10,22 @@ stack_t upcode_push(stack_t **stack, __attribute__((unused))unsigned int line_nu
 
 	stack_t *new;
 
-	if (head == NULL)
+	if (stack == NULL)
 	{
 		return (NULL);
 	}
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
-		printf("Error: malloc failed");
+		printf("Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-	new->next = *head;
+	new->next = *stack;
 	new->prev = NULL;
 	new->n = n;
-	if (*head != NULL)
-		(*head)->prev = new;
-	*head = new;
+	if (*stack != NULL)
+		(*stack)->prev = new;
+	*stack = new;
 	return (new);
 }
 /**
