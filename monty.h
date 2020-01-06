@@ -33,6 +33,9 @@ typedef struct instruction_s
 } instruction_t;
 
 
+stack_t *add_dnodeint(stack_t **head, int n);
+
+
 /* needed functions in main */
 void verif(int argc);
 void exist(FILE *f, char *agrv[]);
@@ -50,11 +53,11 @@ void opcode_pint(stack_t **stack, __attribute__((unused))char *token2,
 void opcode_swap(stack_t **stack, __attribute__((unused))char *token2,
                  unsigned int line_number);
 void opcode_add(stack_t **stack, __attribute__((unused))char *token2,
-		, unsigned int line_number);
+		unsigned int line_number);
 void opcode_nop(stack_t **stack, __attribute__((unused))char *token2,
 		unsigned int line_number);
 void opcode_pop(stack_t **stack, __attribute__((unused))char *token2,
 		unsigned int line_number);
-void stack_free(stack_t **stack, __attribute__((unused))char *token2
-                , __attribute__((unused))unsigned int line_number));
+void stack_free(stack_t **stack, __attribute__((unused))char *token2,
+		__attribute__((unused))unsigned int line_number);
 #endif /* _MONTY_ */

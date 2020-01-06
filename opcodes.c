@@ -3,32 +3,6 @@
 #include <string.h>
 
 /**
- * *add_dnodeint - adds a new node at the beginning of a stack_t.
- * @head: doubly linked list pointer.
- * @n: is int type
- * Return: the address of new node
- */
-stack_t *add_dnodeint(stack_t **head, int n)
-{
-	stack_t *newnode;
-
-	newnode = malloc(sizeof(stack_t));
-
-	if (newnode == NULL)
-		return (NULL);
-	newnode->n = n;
-	newnode->next = *head;
-	newnode->prev = NULL;
-	if (*head != NULL)
-		(*head)->prev = newnode;
-	*head = newnode;
-	return (*head);
-}
-
-
-
-
-/**
  * opcode_push - function push node to the beginning
  * @stack :is stack_t type, pointer to node
  * @line_number :is int type
@@ -78,8 +52,8 @@ void opcode_pall(stack_t **stack, __attribute__((unused))char *token2
  * @token2: token of value.
  * @line_number: line number.
  */
-void stack_free(stack_t **stack, __attribute__((unused))char *token2
-		, __attribute__((unused))unsigned int line_number))
+void stack_free(stack_t **stack, __attribute__((unused))char *token2,
+		__attribute__((unused))unsigned int line_number)
 {
 	stack_t *tempo;
 
@@ -87,7 +61,7 @@ void stack_free(stack_t **stack, __attribute__((unused))char *token2
 	{
 		return;
 	}
-	while (head->next != NULL)
+	while ((*stack)->next != NULL)
 	{
 		tempo = *stack;
 		*stack = (*stack)->next;
@@ -132,7 +106,7 @@ void opcode_pop(stack_t **stack, __attribute__((unused))char *token2,
 		exit(EXIT_FAILURE);
 	}
 	tempo = *stack;
-	stack = tempo->next;
+	*stack = tempo->next;
 	if (*stack != NULL)
 		(*stack)->prev = NULL;
 	free(tempo);

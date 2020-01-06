@@ -12,7 +12,7 @@ void opcode_swap(stack_t **stack, __attribute__((unused))char *token2,
 {
 	stack_t *tempo;
 
-	if (stack == NULL || *stack == NULL || (*stack_t) == NULL)
+	if (stack == NULL || *stack == NULL || (*stack) == NULL)
 	{
 		printf("L%d: can't swap, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
@@ -36,13 +36,13 @@ void opcode_add(stack_t **stack, __attribute__((unused))char *token2
 	int total_add;
 	stack_t *tempo;
 
-	(stack == NULL || *stack == NULL ||  (*stack)->next  == NULL)
+	if (stack == NULL || *stack == NULL ||  (*stack)->next  == NULL)
 	{
 		printf("L%d: can't add, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	tempo = *stack;
-	(*stack) = (*stack_t)->next;
+	(*stack) = (*stack)->next;
 	total_add = tempo->n + (*stack)->n;
 	(*stack)->n = total_add;
 	free((*stack)->prev);
