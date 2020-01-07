@@ -33,7 +33,7 @@ typedef struct instruction_s
 } instruction_t;
 
 
-stack_t *add_dnodeint(stack_t **head, int n);
+void add_dnodeint(stack_t **head, int n);
 
 
 /* needed functions in main */
@@ -41,6 +41,8 @@ void verif(int argc);
 void exist(FILE *f, char *agrv[]);
 
 void inline_f(FILE *F);
+int get_opcode(char string[]);
+void is_token_opcode(char *token, unsigned int lines);
 void (*get_func(char *word))(stack_t **, char *, unsigned int);
 
 

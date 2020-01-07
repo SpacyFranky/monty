@@ -19,6 +19,11 @@ int get_opcode(char string[])
 	name_op a[] = {
 		{"push"},
 		{"pall"},
+		{"pint"},
+		{"pop"},
+		{"swap"},
+		{"add"},
+		{"nop"},
 		{"\0"},
 		{"\n"},
 		{"NULL"}

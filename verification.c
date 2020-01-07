@@ -28,3 +28,17 @@ void exist(FILE *f, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 }
+/**
+ * is_token_opcode - checks if the first word per line is an opcode
+ * or not. If it doesn't exist, it prints an error message to stderr.
+ * @token: first word per line.
+ */
+void is_token_opcode(char *token, unsigned int lines)
+{
+	if (get_opcode(token) == -1)
+	{
+		fprintf(stderr, "L%d: unkown instruction %s\n", lines,
+			token);
+		exit(EXIT_FAILURE);
+	}
+}

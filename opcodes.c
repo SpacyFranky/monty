@@ -13,12 +13,7 @@ void opcode_push(stack_t **stack, char *token2, unsigned int line_number)
 {
 	int x;
 
-	if (stack == NULL)
-	{
-		stack = malloc(sizeof(stack_t));
-		printf("push stack is NULL\n");
-	}
-		if (token2 == NULL)
+	if (token2 == NULL)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
